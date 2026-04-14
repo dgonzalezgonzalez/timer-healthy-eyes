@@ -84,7 +84,6 @@ powershell -ExecutionPolicy Bypass -File .\scripts\uninstall_autostart_windows.p
 ## Controles 🎮
 
 - Al abrir app, el ciclo arranca automáticamente.
-- Al abrir app, suena 1 pitido corto de confirmación de arranque.
 - `Start`: inicia ciclo si estaba detenido.
 - `Pause`: pausa y preserva tiempo restante.
 - `Resume`: reanuda exacto desde restante.
