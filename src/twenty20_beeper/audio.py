@@ -23,7 +23,11 @@ def default_audio_backend(asset_path: Path) -> None:
     if system == "Windows":
         import winsound
 
-        winsound.PlaySound(str(asset_path), winsound.SND_FILENAME | winsound.SND_ASYNC)
+        try:
+            # Native tone is more reliable on Windows than shipping a wav asset.
+            winsound.Beep(880, 140)
+        except RuntimeError:
+            winsound.MessageBeep(winsound.MB_ICONASTERISK)
         return
 
     print("\a", end="", flush=True)
