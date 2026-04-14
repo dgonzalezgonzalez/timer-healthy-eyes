@@ -30,6 +30,7 @@ class TwentyTwentyApp:
 
         self._build_layout()
         self._start_timer_now()
+        self.root.after(150, self._play_startup_beep)
         self.root.after(200, self._bring_to_front)
         self._refresh_ui()
         self._schedule_tick()
@@ -61,6 +62,13 @@ class TwentyTwentyApp:
 
     def _start_timer_now(self) -> None:
         self.engine.start(time.monotonic())
+
+    def _play_startup_beep(self) -> None:
+        try:
+            self.audio.play()
+        except Exception:
+            # Startup confirmation beep should never block app startup.
+            pass
 
     def _bring_to_front(self) -> None:
         try:
