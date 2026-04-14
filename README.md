@@ -62,6 +62,7 @@ Desactivar:
 
 - Instalar autoarranque: doble clic en `InstalarAutoarranqueMac.command`
 - Desinstalar autoarranque: doble clic en `DesinstalarAutoarranqueMac.command`
+- Si ya lo tenías instalado con versión anterior, desinstala y vuelve a instalar para aplicar mejoras.
 
 ### Windows (PowerShell)
 
